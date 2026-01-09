@@ -308,8 +308,12 @@ body {
     background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
 }
 
-.medical-banner {
-    background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%);
+.socialmedia-banner {
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+.custom-banner {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
 }
 
 .mission-icon-large {
@@ -348,6 +352,17 @@ body {
 .difficulty-badge.hard {
     background: #ef4444;
     box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+.difficulty-badge.custom {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+    animation: rainbowGlow 3s ease-in-out infinite;
+}
+
+@keyframes rainbowGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.7); }
 }
 
 /* Mission Content */
@@ -493,15 +508,61 @@ body {
     transform: translateY(-2px);
 }
 
-.medical-btn {
-    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+.socialmedia-btn {
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
     color: white;
-    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
 }
 
-.medical-btn:hover {
-    box-shadow: 0 12px 35px rgba(6, 182, 212, 0.6);
+.socialmedia-btn:hover {
+    box-shadow: 0 12px 35px rgba(236, 72, 153, 0.6);
     transform: translateY(-2px);
+}
+
+.custom-btn {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    color: white;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+.custom-btn:hover {
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Custom Input Area */
+.custom-input-area {
+    margin: 20px 0;
+}
+
+.custom-input {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    border-radius: 10px;
+    color: white;
+    font-size: 1em;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.custom-input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.custom-hint {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-top: 10px;
+    font-style: italic;
 }
 
 /* Footer */
