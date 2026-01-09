@@ -1,6 +1,6 @@
 # ⚡ Circuit Quest - Educational Arduino Game
 
-**Play Now:** [https://claudiajchen.github.io/circuit-game/landing.html](https://claudiajchen.github.io/circuit-game/landing.html)
+**Play Now:** [https://cldchn.github.io/circuit-game/landing.html](https://cldchn.github.io/circuit-game/landing.html)
 
 An interactive web-based game that teaches Arduino and electronics through story-driven challenges.
 
@@ -39,12 +39,12 @@ Based on real Arduino and breadboard connections:
 ## 🚀 Quick Start
 
 ### Play Online
-Visit the live demo: **[Circuit Quest Landing Page](https://claudiajchen.github.io/circuit-game/landing.html)**
+Visit the live demo: **[Circuit Quest Landing Page](https://cldchn.github.io/circuit-game/landing.html)**
 
 ### Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/claudiajchen/circuit-game.git
+   git clone https://github.com/cldchn/circuit-game.git
    cd circuit-game
    ```
 
@@ -197,7 +197,7 @@ Created as an educational tool for high school students learning electronics and
 
 ## 🎮 Start Learning!
 
-**[Play Circuit Quest Now →](https://claudiajchen.github.io/circuit-game/landing.html)**
+**[Play Circuit Quest Now →](https://cldchn.github.io/circuit-game/landing.html)**
 
 ---
 

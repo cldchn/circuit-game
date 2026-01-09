@@ -3,7 +3,7 @@
 ## ✅ What's Been Done
 
 Your Circuit Quest game is now on GitHub:
-- **Repository URL**: https://github.com/claudiajchen/circuit-game
+- **Repository URL**: https://github.com/cldchn/circuit-game
 - **All files committed and pushed** to the `main` branch
 
 ---
@@ -13,7 +13,7 @@ Your Circuit Quest game is now on GitHub:
 To make your game playable online, you need to enable GitHub Pages:
 
 ### Steps:
-1. Go to your repository: https://github.com/claudiajchen/circuit-game
+1. Go to your repository: https://github.com/cldchn/circuit-game
 
 2. Click on **Settings** (top right, next to About)
 
@@ -28,8 +28,8 @@ To make your game playable online, you need to enable GitHub Pages:
 5. Wait 1-2 minutes for deployment
 
 6. Your game will be live at:
-   - **Landing Page**: https://claudiajchen.github.io/circuit-game/landing.html
-   - **Direct Game**: https://claudiajchen.github.io/circuit-game/index.html
+   - **Landing Page**: https://cldchn.github.io/circuit-game/landing.html
+   - **Direct Game**: https://cldchn.github.io/circuit-game/index.html
 
 ---
 
@@ -38,7 +38,7 @@ To make your game playable online, you need to enable GitHub Pages:
 Once GitHub Pages is enabled, you can share:
 ```
 🎮 Play Circuit Quest - Learn Arduino & Electronics!
-https://claudiajchen.github.io/circuit-game/landing.html
+https://cldchn.github.io/circuit-game/landing.html
 ```
 
 ---
