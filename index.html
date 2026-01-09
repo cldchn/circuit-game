@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadboard Circuit Game - Learn Arduino & Electronics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Breadboard Circuit Game</h1>
+                    <p>Learn Arduino and Electronics</p>
+                </div>
+                <a href="landing.html" class="back-btn">← Back to Themes</a>
+            </div>
+        </header>
+
+        <!-- Info Bar -->
+        <div class="info-bar">
+            <div class="level-info">
+                <span class="label">Level:</span>
+                <span id="current-level">1</span>
+            </div>
+            <div class="score-info">
+                <span class="label">Score:</span>
+                <span id="score">0</span>
+            </div>
+        </div>
+
+        <!-- Story Banner (Above Everything) -->
+        <div class="story-banner">
+            <h1 id="story-title">Loading Challenge...</h1>
+            <p class="story-description" id="story-description">Loading story...</p>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area">
+            <!-- Challenge Panel -->
+            <div class="challenge-panel">
+                <div class="challenge-section">
+                    <h3>Your Mission:</h3>
+                    <div class="challenge-text" id="challenge-task">Loading task...</div>
+                </div>
+
+                <div class="challenge-requirements" id="challenge-requirements">
+                    <h3>Requirements:</h3>
+                    <ul id="requirements-list"></ul>
+                </div>
+
+                <button id="hint-btn" class="btn btn-hint">💡 Show Hint</button>
+                <div id="hint-text" class="hint-text" style="display: none;"></div>
+
+                <div class="toolbox">
+                    <h3>Component Toolbox</h3>
+                    <div class="component-grid" id="component-toolbox">
+                        <!-- Components will be added dynamically -->
+                    </div>
+                </div>
+
+                <button id="check-btn" class="btn btn-primary">✓ Check Solution</button>
+                <button id="reset-btn" class="btn btn-secondary">🔄 Reset Circuit</button>
+            </div>
+
+            <!-- Workspace -->
+            <div class="workspace">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3>Breadboard Workspace</h3>
+                    <button id="test-btn" class="btn btn-test">▶ Test Circuit</button>
+                </div>
+
+                <!-- Arduino Board -->
+                <div class="arduino-board">
+                    <div class="arduino-header">Arduino Uno</div>
+                    <div class="arduino-pins" id="arduino-pins">
+                        <!-- Pins will be added dynamically -->
+                    </div>
+                </div>
+
+                <!-- Breadboard -->
+                <div class="breadboard-container" id="breadboard-container">
+                    <div class="breadboard" id="breadboard">
+                        <!-- Left Power Rails (Vertical) -->
+                        <div class="power-rails-left">
+                            <div class="rail-vertical positive" id="rail-positive-left"></div>
+                            <div class="rail-vertical negative" id="rail-negative-left"></div>
+                        </div>
+
+                        <!-- Terminal Strips (Center) -->
+                        <div class="terminal-strips" id="terminal-strips"></div>
+
+                        <!-- Right Power Rails (Vertical) -->
+                        <div class="power-rails-right">
+                            <div class="rail-vertical positive" id="rail-positive-right"></div>
+                            <div class="rail-vertical negative" id="rail-negative-right"></div>
+                        </div>
+                    </div>
+
+                    <div class="placed-components" id="placed-components">
+                        <!-- Placed components will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Modal -->
+        <div id="feedback-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2 id="feedback-title">Result</h2>
+                <p id="feedback-message"></p>
+                <button id="feedback-close" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="themes.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

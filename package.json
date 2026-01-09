@@ -1,0 +1,22 @@
+{
+  "name": "breadboard-circuit-game",
+  "version": "1.0.0",
+  "description": "Interactive STEM education game for learning Arduino and breadboard circuits",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o"
+  },
+  "keywords": [
+    "education",
+    "STEM",
+    "arduino",
+    "breadboard",
+    "electronics",
+    "game"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

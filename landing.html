@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Challenge - Learn Electronics Through Story</title>
+    <link rel="stylesheet" href="landing-styles.css">
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="badge">🎓 Educational Game</div>
+            <h1 class="hero-title">⚡ Circuit Challenge</h1>
+            <p class="hero-subtitle">Learn Arduino & Electronics Through Interactive Adventures</p>
+            <div class="hero-description">
+                <p>Master real circuit-building skills while saving Mars colonies, winning championships, managing Broadway shows, or performing life-saving surgeries!</p>
+            </div>
+            <button class="cta-button" onclick="document.querySelector('.theme-selection').scrollIntoView({behavior: 'smooth'})">
+                Choose Your Adventure ↓
+            </button>
+        </header>
+
+        <!-- What You'll Learn Section -->
+        <section class="learn-section">
+            <h2>What You'll Master</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">💡</div>
+                    <h3>LED Circuits</h3>
+                    <p>Learn proper polarity, current limiting, and resistor placement</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔌</div>
+                    <h3>Breadboard Basics</h3>
+                    <p>Understand how breadboards work and component connections</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎮</div>
+                    <h3>Arduino Pins</h3>
+                    <p>Digital, PWM, and analog pins - when to use each</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Real Components</h3>
+                    <p>LEDs, resistors, buttons, motors, and sensors</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theme Selection -->
+        <section class="theme-selection">
+            <h2>Choose Your Adventure</h2>
+            <p class="theme-intro">Select a theme and dive into 5 progressive challenges that teach real circuit-building skills through engaging storylines!</p>
+
+            <div class="themes-grid">
+                <!-- Space Theme -->
+                <div class="theme-card" data-theme="SPACE_EXPLORER">
+                    <div class="theme-header space-theme">
+                        <div class="theme-icon">🚀</div>
+                        <h3>Mars Colony Engineer</h3>
+                    </div>
+                    <div class="theme-body">
+                        <p class="theme-description">You're the chief engineer on humanity's first Mars colony. Critical systems are failing and you need to repair them before disaster strikes!</p>
+                        <div class="theme-features">
+                            <span class="feature-tag">🚨 Emergency Systems</span>
+                            <span class="feature-tag">💚 Life Support</span>
+                            <span class="feature-tag">🚪 Airlock Control</span>
+                        </div>
+                        <button class="theme-btn space-btn">Launch Mission</button>
+                    </div>
+                </div>
+
+                <!-- Wild West Theme -->
+                <div class="theme-card" data-theme="WILD_WEST">
+                    <div class="theme-header wildwest-theme">
+                        <div class="theme-icon">🤠</div>
+                        <h3>Wild West Telegraph</h3>
+                    </div>
+                    <div class="theme-body">
+                        <p class="theme-description">You're the telegraph operator in a frontier town. Messages need to get through or the town is doomed! Wire up the telegraph system!</p>
+                        <div class="theme-features">
+                            <span class="feature-tag">🚨 Danger Signal</span>
+                            <span class="feature-tag">📡 Telegraph</span>
+                            <span class="feature-tag">🔔 Town Bell</span>
+                        </div>
+                        <button class="theme-btn wildwest-btn">Start Mission</button>
+                    </div>
+                </div>
+
+                <!-- Sports Theme -->
+                <div class="theme-card" data-theme="SPORTS_ARENA">
+                    <div class="theme-header sports-theme">
+                        <div class="theme-icon">🏟️</div>
+                        <h3>Championship Game Night</h3>
+                    </div>
+                    <div class="theme-body">
+                        <p class="theme-description">You're the tech manager at the biggest game of the year! Keep the scoreboard, lights, and stadium systems operational with 50,000 fans watching!</p>
+                        <div class="theme-features">
+                            <span class="feature-tag">🔴 Team Lights</span>
+                            <span class="feature-tag">⏱️ Game Clock</span>
+                            <span class="feature-tag">🎯 Goal Detection</span>
+                        </div>
+                        <button class="theme-btn sports-btn">Start Game</button>
+                    </div>
+                </div>
+
+                <!-- Musical Theater Theme -->
+                <div class="theme-card" data-theme="MUSICAL_THEATER">
+                    <div class="theme-header theater-theme">
+                        <div class="theme-icon">🎭</div>
+                        <h3>Broadway Opening Night</h3>
+                    </div>
+                    <div class="theme-body">
+                        <p class="theme-description">You're the lighting technician for tonight's big premiere! Control spotlights, stage effects, and curtains to ensure the show goes on!</p>
+                        <div class="theme-features">
+                            <span class="feature-tag">🔴 Spotlights</span>
+                            <span class="feature-tag">🎪 Curtains</span>
+                            <span class="feature-tag">💚 Stage Effects</span>
+                        </div>
+                        <button class="theme-btn theater-btn">Raise Curtain</button>
+                    </div>
+                </div>
+
+                <!-- Medical Theme -->
+                <div class="theme-card" data-theme="MEDICAL_SURGERY">
+                    <div class="theme-header medical-theme">
+                        <div class="theme-icon">🏥</div>
+                        <h3>Emergency Room Surgeon</h3>
+                    </div>
+                    <div class="theme-body">
+                        <p class="theme-description">You're the lead surgeon in the ER! Medical equipment must work perfectly or lives are at risk. Wire critical systems under pressure!</p>
+                        <div class="theme-features">
+                            <span class="feature-tag">🚨 Critical Alerts</span>
+                            <span class="feature-tag">💚 Vitals Monitor</span>
+                            <span class="feature-tag">💉 IV Pumps</span>
+                        </div>
+                        <button class="theme-btn medical-btn">Begin Surgery</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Read the Story</h3>
+                    <p>Each level presents an urgent scenario that needs your help</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Build the Circuit</h3>
+                    <p>Drag components onto the breadboard and connect them properly</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Test & Validate</h3>
+                    <p>See your circuit come to life and check if you solved it correctly</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Level Up!</h3>
+                    <p>Progress through 5 challenges, each teaching new concepts</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>🎓 An educational game for high school students learning electronics and Arduino</p>
+            <p class="footer-note">All circuits are based on real Arduino hardware and best practices</p>
+        </footer>
+    </div>
+
+    <script src="themes.js"></script>
+    <script src="landing.js"></script>
+</body>
+</html>
