@@ -497,17 +497,49 @@ function loadChallenge(level) {
     // Update task description
     document.getElementById('challenge-task').textContent = challenge.task;
 
-    // Update requirements list
-    const requirementsList = document.getElementById('requirements-list');
-    requirementsList.innerHTML = '';
-    challenge.requirements.forEach(req => {
-        const li = document.createElement('li');
-        li.textContent = req;
-        requirementsList.appendChild(li);
-    });
+    // Update level icon based on theme
+    const levelIcon = document.getElementById('level-icon');
+    const themeIcons = {
+        'SPACE_EXPLORER': '🚀',
+        'WILD_WEST': '🤠',
+        'SPORTS_ARENA': '🏟️',
+        'MUSICAL_THEATER': '🎭',
+        'SOCIAL_MEDIA': '📱',
+        'MEDICAL_SURGERY': '🏥'
+    };
+    const themeKey = Object.keys(GAME_THEMES).find(key => GAME_THEMES[key] === ACTIVE_THEME);
+    if (levelIcon && themeKey && themeIcons[themeKey]) {
+        levelIcon.textContent = themeIcons[themeKey];
+    }
 
-    document.getElementById('hint-text').textContent = challenge.hint;
-    document.getElementById('hint-text').style.display = 'none';
+    // Update code block with system code
+    const codeContent = document.getElementById('code-content');
+    if (codeContent) {
+        codeContent.textContent = `void setup() {
+  pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
+  delay(1000);
+}
+
+void loop() {
+  digitalWrite(13, LOW);
+  delay(1000);
+  digitalWrite(13, HIGH);
+  delay(1000);
+}`;
+    }
+
+    // Store hint text for toggle
+    window.currentHint = challenge.hint;
+
+    // Reset hint toggle state
+    const hintToggle = document.getElementById('hint-toggle');
+    const systemCode = document.getElementById('system-code');
+    if (hintToggle && systemCode) {
+        hintToggle.textContent = '▶ Show Hints';
+        hintToggle.classList.remove('expanded');
+        systemCode.style.display = 'none';
+    }
 }
 
 // Event Listeners
@@ -515,7 +547,30 @@ function setupEventListeners() {
     document.getElementById('test-btn').addEventListener('click', toggleTest);
     document.getElementById('check-btn').addEventListener('click', checkCircuit);
     document.getElementById('reset-btn').addEventListener('click', resetCircuit);
-    document.getElementById('hint-btn').addEventListener('click', toggleHint);
+
+    // New hint toggle handler
+    const hintToggle = document.getElementById('hint-toggle');
+    if (hintToggle) {
+        hintToggle.addEventListener('click', function() {
+            const systemCode = document.getElementById('system-code');
+            if (systemCode.style.display === 'none') {
+                systemCode.style.display = 'block';
+                hintToggle.textContent = '▼ Hide Hints';
+                hintToggle.classList.add('expanded');
+            } else {
+                systemCode.style.display = 'none';
+                hintToggle.textContent = '▶ Show Hints';
+                hintToggle.classList.remove('expanded');
+            }
+        });
+    }
+
+    // Legacy hint button (if exists)
+    const oldHintBtn = document.getElementById('hint-btn');
+    if (oldHintBtn) {
+        oldHintBtn.addEventListener('click', toggleHint);
+    }
+
     document.getElementById('feedback-close').addEventListener('click', closeFeedback);
 
     const breadboardContainer = document.querySelector('.breadboard-container');

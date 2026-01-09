@@ -31,45 +31,54 @@
             </div>
         </div>
 
-        <!-- Story Banner (Above Everything) -->
-        <div class="story-banner">
-            <h1 id="story-title">Loading Challenge...</h1>
-            <p class="story-description" id="story-description">Loading story...</p>
-        </div>
-
         <!-- Game Area -->
         <div class="game-area">
             <!-- Challenge Panel -->
             <div class="challenge-panel">
-                <div class="challenge-section">
-                    <h3>Your Mission:</h3>
-                    <div class="challenge-text" id="challenge-task">Loading task...</div>
+                <!-- Level Header with Icon -->
+                <div class="level-header">
+                    <div class="level-icon" id="level-icon">🎮</div>
+                    <div class="level-title-section">
+                        <h2 id="story-title">Loading Challenge...</h2>
+                        <p class="story-description" id="story-description">Loading story...</p>
+                    </div>
                 </div>
 
-                <div class="challenge-requirements" id="challenge-requirements">
-                    <h3>Requirements:</h3>
-                    <ul id="requirements-list"></ul>
+                <!-- Mission Box -->
+                <div class="mission-box">
+                    <div class="mission-header">🎯 Your Mission:</div>
+                    <div class="mission-text" id="challenge-task">Loading task...</div>
                 </div>
 
-                <button id="hint-btn" class="btn btn-hint">💡 Show Hint</button>
-                <div id="hint-text" class="hint-text" style="display: none;"></div>
+                <!-- Show Hints Toggle -->
+                <button id="hint-toggle" class="hint-toggle">▶ Show Hints</button>
 
-                <div class="toolbox">
-                    <h3>Component Toolbox</h3>
+                <!-- System Code Block (Hidden by default) -->
+                <div id="system-code" class="system-code" style="display: none;">
+                    <div class="code-header">// System Code</div>
+                    <pre class="code-content"><code id="code-content">// Loading...</code></pre>
+                </div>
+
+                <!-- Drag Components Section -->
+                <div class="drag-section">
+                    <div class="drag-header">🔧 Drag Components to Breadboard:</div>
                     <div class="component-grid" id="component-toolbox">
                         <!-- Components will be added dynamically -->
                     </div>
                 </div>
 
-                <button id="check-btn" class="btn btn-primary">✓ Check Solution</button>
-                <button id="reset-btn" class="btn btn-secondary">🔄 Reset Circuit</button>
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button id="check-btn" class="btn btn-check">✓ Check Solution</button>
+                    <button id="reset-btn" class="btn btn-reset">Reset</button>
+                </div>
             </div>
 
             <!-- Workspace -->
             <div class="workspace">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                    <h3>Breadboard Workspace</h3>
-                    <button id="test-btn" class="btn btn-test">▶ Test Circuit</button>
+                <div class="workspace-header">
+                    <div class="workspace-title">🔌 Breadboard (Drag & Drop)</div>
+                    <button id="test-btn" class="btn btn-test">▶ Test</button>
                 </div>
 
                 <!-- Arduino Board -->

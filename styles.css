@@ -214,10 +214,37 @@ header p {
     background: #5a6268;
 }
 
-.btn-test {
-    background: linear-gradient(to right, #3b82f6, #2563eb);
+.btn-check {
+    flex: 1;
+    background: linear-gradient(to right, #16a34a, #15803d);
     color: white;
-    margin-right: 10px;
+    font-size: 0.95em;
+    padding: 12px 24px;
+}
+
+.btn-check:hover {
+    background: linear-gradient(to right, #15803d, #166534);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
+}
+
+.btn-reset {
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 0.9em;
+    padding: 12px 24px;
+}
+
+.btn-reset:hover {
+    background: #cbd5e1;
+}
+
+.btn-test {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-size: 0.9em;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
 .btn-test:hover {
@@ -252,12 +279,153 @@ header p {
 
 /* Challenge Panel */
 .challenge-panel {
-    background: white;
-    padding: 35px;
+    background: #f8f9fa;
+    padding: 25px;
     border-right: none;
     overflow-y: auto;
+    border-radius: 0;
+}
+
+/* Level Header with Icon */
+.level-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.level-icon {
+    font-size: 2.5em;
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+    flex-shrink: 0;
+}
+
+.level-title-section {
+    flex: 1;
+}
+
+.level-title-section h2 {
+    color: #1e293b;
+    margin: 0 0 8px 0;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.story-description {
+    color: #64748b;
+    line-height: 1.5;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Mission Box */
+.mission-box {
+    background: #e0e7ff;
+    border: 2px solid #818cf8;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.mission-header {
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #4338ca;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.mission-text {
+    color: #3730a3;
+    line-height: 1.6;
+    font-size: 0.9em;
+}
+
+/* Hint Toggle */
+.hint-toggle {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #6366f1;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.hint-toggle:hover {
+    background: #f1f5f9;
+}
+
+.hint-toggle.expanded {
+    color: #4338ca;
+}
+
+/* System Code Block */
+.system-code {
+    background: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.code-header {
+    color: #94a3b8;
+    font-size: 0.75em;
+    padding: 10px 15px;
+    background: #0f172a;
+}
+
+.code-content {
+    margin: 0;
+    padding: 15px;
+}
+
+.code-content code {
+    color: #e2e8f0;
+    font-size: 0.8em;
+    line-height: 1.6;
+    display: block;
+}
+
+/* Drag Section */
+.drag-section {
+    margin-bottom: 20px;
+}
+
+.drag-header {
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 10px;
 }
 
 .story-section {
@@ -350,10 +518,27 @@ header p {
 
 /* Workspace */
 .workspace {
-    padding: 35px;
+    padding: 25px;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+}
+
+.workspace-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.workspace-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 /* Toolbox */
