@@ -38,15 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Custom theme generator
+    // Custom theme generator with AI
     const generateBtn = document.getElementById('generate-custom-btn');
     const customInput = document.getElementById('custom-theme-input');
 
     if (generateBtn && customInput) {
-        generateBtn.addEventListener('click', () => {
-            const theme = customInput.value.trim();
+        generateBtn.addEventListener('click', async () => {
+            const themeIdea = customInput.value.trim();
 
-            if (!theme) {
+            if (!themeIdea) {
                 showNotification('Please enter a theme first!', 'warning');
                 customInput.focus();
                 return;
@@ -58,16 +58,33 @@ document.addEventListener('DOMContentLoaded', () => {
             buttonText.textContent = '✨ GENERATING...';
             generateBtn.disabled = true;
 
-            // Simulate theme generation (in a real app, this would call an AI API)
-            setTimeout(() => {
+            try {
+                // Generate custom theme using Claude API
+                const customTheme = await generateCustomTheme(themeIdea);
+
+                // Save the custom theme to localStorage
+                localStorage.setItem('CUSTOM_THEME', JSON.stringify(customTheme));
+                localStorage.setItem('selectedTheme', 'CUSTOM_THEME');
+
+                // Show success and navigate
                 showNotification(
-                    `🎮 Custom "${theme}" theme coming soon! For now, try one of our pre-made adventures. \n\n💡 This feature requires AI integration to generate unique storylines. Check back later!`,
-                    'info'
+                    `🎮 Your "${themeIdea}" adventure is ready! Launching in 2 seconds...`,
+                    'success'
+                );
+
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+
+            } catch (error) {
+                console.error('Theme generation error:', error);
+                showNotification(
+                    `⚠️ Couldn't generate your theme right now. This feature requires an API connection. \n\nTry one of our pre-made adventures instead!`,
+                    'warning'
                 );
                 buttonText.textContent = originalText;
                 generateBtn.disabled = false;
-                customInput.value = '';
-            }, 1500);
+            }
         });
 
         // Allow Enter key to generate
@@ -76,6 +93,117 @@ document.addEventListener('DOMContentLoaded', () => {
                 generateBtn.click();
             }
         });
+    }
+
+    // Generate custom theme using AI (placeholder - would need actual API integration)
+    async function generateCustomTheme(themeIdea) {
+        // This is a placeholder that demonstrates the structure
+        // In production, this would call Claude API with a prompt like:
+        // "Generate 5 progressive Arduino circuit challenges for a story about [themeIdea]"
+
+        // For now, create a template-based theme
+        const themeKey = themeIdea.toUpperCase().replace(/\s+/g, '_');
+        const emoji = getThemeEmoji(themeIdea);
+
+        return {
+            name: `${emoji} ${themeIdea}`,
+            description: `You're immersed in a ${themeIdea.toLowerCase()} adventure! Your circuit-building skills will save the day!`,
+            testButtonText: `${emoji} Test System`,
+
+            components: {
+                'led-red': { name: 'Alert Signal', icon: '🔴', description: 'Critical warning indicator' },
+                'led-green': { name: 'Status Light', icon: '💚', description: 'All systems operational' },
+                'led-blue': { name: 'Activity Indicator', icon: '💙', description: 'System is active' },
+                'resistor-220': { name: 'Power Control', icon: '⚡', description: 'Regulates current flow' },
+                'resistor-1k': { name: 'Signal Filter', icon: '📊', description: 'Stabilizes inputs' },
+                'motor': { name: 'Motor System', icon: '⚙️', description: 'Mechanical actuator' },
+                'ultrasonic': { name: 'Distance Sensor', icon: '📡', description: 'Detects objects' },
+                'button': { name: 'Control Button', icon: '🔘', description: 'Manual trigger' }
+            },
+
+            levels: [
+                {
+                    title: `${emoji} First Challenge!`,
+                    story: `Welcome to your ${themeIdea} adventure! The alert system needs power. Get that red light working immediately!`,
+                    task: "Connect the Alert Signal to bring the system online!",
+                    requirements: ['Connect Alert Signal', 'Add Power Control'],
+                    hint: "Alert systems use pin 13. Always add power control to protect components!",
+                    requiredComponents: [
+                        { type: 'led', color: 'red', pin: 13 },
+                        { type: 'resistor', value: 220, pin: 13 }
+                    ]
+                },
+                {
+                    title: `💚 Systems Online`,
+                    story: `Great work! Now we need the Status Light showing everything is operational in your ${themeIdea} mission.`,
+                    task: "Get the Status Light working to confirm all systems!",
+                    requirements: ['Connect Status Light', 'Add Power Control'],
+                    hint: "Status indicators run on pin 12. Don't forget the power control!",
+                    requiredComponents: [
+                        { type: 'led', color: 'green', pin: 12 },
+                        { type: 'resistor', value: 220, pin: 12 }
+                    ]
+                },
+                {
+                    title: `${emoji} Full System Check`,
+                    story: `The situation is escalating! You need ALL three indicators operational: Alert, Status, and Activity lights.`,
+                    task: "Set up the complete indicator system!",
+                    requirements: ['Alert Signal (pin 13)', 'Status Light (pin 12)', 'Activity Indicator (pin 11)', 'Power Controls for all'],
+                    hint: "Red=13, Green=12, Blue=11. Each light needs its own power control!",
+                    requiredComponents: [
+                        { type: 'led', color: 'red', pin: 13 },
+                        { type: 'led', color: 'green', pin: 12 },
+                        { type: 'led', color: 'blue', pin: 11 },
+                        { type: 'resistor', value: 220, pin: 13 },
+                        { type: 'resistor', value: 220, pin: 12 },
+                        { type: 'resistor', value: 220, pin: 11 }
+                    ]
+                },
+                {
+                    title: `🎮 Manual Control`,
+                    story: `You need manual control! Connect the Control Button to operate the Motor System for your ${themeIdea} challenge.`,
+                    task: "Wire the Control Button to activate the Motor System.",
+                    requirements: ['Connect Control Button (input 2)', 'Connect Motor System (output 9)', 'Add Signal Filter'],
+                    hint: "Buttons use input pin 2. Motors need PWM pin 9. The filter prevents false triggers!",
+                    requiredComponents: [
+                        { type: 'button', pin: 2 },
+                        { type: 'resistor', value: 1000, pin: 2 },
+                        { type: 'motor', pin: 9 }
+                    ]
+                },
+                {
+                    title: `${emoji} Automatic Detection`,
+                    story: `Final challenge! Set up the Distance Sensor to automatically trigger the Alert Signal. This is advanced ${themeIdea} tech!`,
+                    task: "Install automatic alert activation using the Distance Sensor.",
+                    requirements: ['Connect Distance Sensor (pins 6 & 7)', 'Connect Alert Signal (pin 13)', 'Add Power Control'],
+                    hint: "Sensors use pins 6 and 7. When an object is detected, the alert activates automatically!",
+                    requiredComponents: [
+                        { type: 'ultrasonic', pin: 6, pin2: 7 },
+                        { type: 'led', color: 'red', pin: 13 },
+                        { type: 'resistor', value: 220, pin: 13 }
+                    ]
+                }
+            ]
+        };
+    }
+
+    // Helper to get appropriate emoji for theme
+    function getThemeEmoji(theme) {
+        const themeWords = theme.toLowerCase();
+        if (themeWords.includes('zombie') || themeWords.includes('horror')) return '🧟';
+        if (themeWords.includes('pirate') || themeWords.includes('treasure')) return '🏴‍☠️';
+        if (themeWords.includes('detective') || themeWords.includes('mystery')) return '🔍';
+        if (themeWords.includes('dragon') || themeWords.includes('fantasy')) return '🐉';
+        if (themeWords.includes('robot') || themeWords.includes('ai')) return '🤖';
+        if (themeWords.includes('ocean') || themeWords.includes('underwater')) return '🌊';
+        if (themeWords.includes('volcano') || themeWords.includes('fire')) return '🌋';
+        if (themeWords.includes('ice') || themeWords.includes('arctic')) return '❄️';
+        if (themeWords.includes('jungle') || themeWords.includes('safari')) return '🌴';
+        if (themeWords.includes('ninja') || themeWords.includes('samurai')) return '🥷';
+        if (themeWords.includes('wizard') || themeWords.includes('magic')) return '🧙';
+        if (themeWords.includes('alien') || themeWords.includes('ufo')) return '👽';
+        if (themeWords.includes('superhero') || themeWords.includes('comic')) return '🦸';
+        return '⚡'; // Default
     }
 });
 
@@ -141,6 +269,10 @@ function showNotification(message, type = 'info') {
 
             .custom-notification.warning {
                 border-color: #f59e0b;
+            }
+
+            .custom-notification.success {
+                border-color: #10b981;
             }
 
             .notification-content {

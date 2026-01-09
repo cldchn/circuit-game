@@ -311,6 +311,81 @@ const GAME_THEMES = {
         ]
     },
 
+    SOCIAL_MEDIA: {
+        name: "📱 Viral Content Creator",
+        description: "You're a rising social media star! Your livestream studio needs working tech to keep your followers engaged!",
+        testButtonText: "📸 Test Studio",
+
+        components: {
+            'led-red': { name: 'Recording Light', icon: '🔴', description: 'Shows when you are live' },
+            'led-green': { name: 'Chat Active Light', icon: '💬', description: 'Indicates chat is responding' },
+            'led-blue': { name: 'Follower Milestone', icon: '⭐', description: 'Lights up for new followers' },
+            'resistor-220': { name: 'Brightness Control', icon: '💡', description: 'Controls LED brightness' },
+            'resistor-1k': { name: 'Signal Stabilizer', icon: '📶', description: 'Prevents connection drops' },
+            'motor': { name: 'Camera Gimbal', icon: '🎥', description: 'Smooth camera movement' },
+            'ultrasonic': { name: 'Proximity Sensor', icon: '👋', description: 'Detects when you enter frame' },
+            'button': { name: 'Like Button', icon: '❤️', description: 'Manual engagement trigger' }
+        },
+
+        levels: [
+            {
+                title: "🔴 Going Live in 3... 2... 1...",
+                story: "You're about to start your biggest livestream ever! But the Recording Light isn't working - your viewers won't know you're live! Quick, fix it before they leave!",
+                task: "Get the Recording Light working to show you're live!",
+                requirements: ['Connect Recording Light to streaming system', 'Add Brightness Control'],
+                hint: "Recording indicators use circuit 13. Control that brightness so it's not too harsh on camera!",
+                requiredComponents: [{ type: 'led', color: 'red', pin: 13 }, { type: 'resistor', value: 220, pin: 13 }]
+            },
+            {
+                title: "💬 Chat's Going Crazy!",
+                story: "Your viewers are sending TONS of messages but the Chat Active Light is broken! They think you're ignoring them. Show them you're reading with that green light!",
+                task: "Fix the Chat Active Light so viewers know you see their messages!",
+                requirements: ['Connect Chat Active Light to stream overlay', 'Add Brightness Control'],
+                hint: "Chat indicators run on circuit 12. Brightness control keeps it visible without blinding you!",
+                requiredComponents: [{ type: 'led', color: 'green', pin: 12 }, { type: 'resistor', value: 220, pin: 12 }]
+            },
+            {
+                title: "⭐ 100K Followers Celebration!",
+                story: "YOU HIT 100K FOLLOWERS! Your celebration stream needs ALL lights working: Recording to show you're live, Chat for engagement, and Milestone light for the epic moment!",
+                task: "Set up your complete studio lighting system for the celebration!",
+                requirements: ['Recording Light (circuit 13)', 'Chat Active Light (circuit 12)', 'Follower Milestone (circuit 11)', 'Brightness Controls for all'],
+                hint: "Red=13 (live), Green=12 (chat), Blue=11 (milestone). Each light needs brightness control!",
+                requiredComponents: [
+                    { type: 'led', color: 'red', pin: 13 },
+                    { type: 'led', color: 'green', pin: 12 },
+                    { type: 'led', color: 'blue', pin: 11 },
+                    { type: 'resistor', value: 220, pin: 13 },
+                    { type: 'resistor', value: 220, pin: 12 },
+                    { type: 'resistor', value: 220, pin: 11 }
+                ]
+            },
+            {
+                title: "❤️ Interactive Like System",
+                story: "You want viewers to see their likes INSTANTLY! Wire up the Like Button to control the Camera Gimbal for those perfect reaction shots when someone likes!",
+                task: "Connect the Like Button to trigger the Camera Gimbal.",
+                requirements: ['Connect Like Button (input 2)', 'Connect Camera Gimbal (output 9)', 'Add Signal Stabilizer'],
+                hint: "Interactive buttons use input 2. Camera motors need output 9. Stabilize that signal for smooth movement!",
+                requiredComponents: [
+                    { type: 'button', pin: 2 },
+                    { type: 'resistor', value: 1000, pin: 2 },
+                    { type: 'motor', pin: 9 }
+                ]
+            },
+            {
+                title: "👋 Auto-Start When You Enter",
+                story: "You're tired of manually starting streams! Set up the Proximity Sensor to automatically turn on the Recording Light when you step in front of the camera. Pro content creator mode!",
+                task: "Install automatic recording activation using the Proximity Sensor.",
+                requirements: ['Connect Proximity Sensor (sensors 6 & 7)', 'Connect Recording Light (circuit 13)', 'Add Brightness Control'],
+                hint: "Proximity sensors use circuits 6 and 7. When you enter frame, recording starts automatically!",
+                requiredComponents: [
+                    { type: 'ultrasonic', pin: 6, pin2: 7 },
+                    { type: 'led', color: 'red', pin: 13 },
+                    { type: 'resistor', value: 220, pin: 13 }
+                ]
+            }
+        ]
+    },
+
     MEDICAL_SURGERY: {
         name: "🏥 Emergency Room Surgeon",
         description: "You're the lead surgeon in the ER. Medical equipment must work perfectly or lives are at risk!",

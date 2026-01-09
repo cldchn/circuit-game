@@ -277,7 +277,18 @@ function initGame() {
     const selectedTheme = localStorage.getItem('selectedTheme');
     console.log('Selected theme from localStorage:', selectedTheme);
 
-    if (selectedTheme && typeof GAME_THEMES !== 'undefined' && GAME_THEMES[selectedTheme]) {
+    if (selectedTheme === 'CUSTOM_THEME') {
+        // Load custom theme from localStorage
+        const customThemeJSON = localStorage.getItem('CUSTOM_THEME');
+        if (customThemeJSON) {
+            try {
+                ACTIVE_THEME = JSON.parse(customThemeJSON);
+                console.log('Loaded CUSTOM_THEME:', ACTIVE_THEME.name);
+            } catch (e) {
+                console.error('Failed to parse custom theme:', e);
+            }
+        }
+    } else if (selectedTheme && typeof GAME_THEMES !== 'undefined' && GAME_THEMES[selectedTheme]) {
         ACTIVE_THEME = GAME_THEMES[selectedTheme];
         console.log('Set ACTIVE_THEME to:', ACTIVE_THEME.name);
     }
