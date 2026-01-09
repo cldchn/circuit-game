@@ -19,63 +19,52 @@
             </div>
         </header>
 
-        <!-- Info Bar -->
-        <div class="info-bar">
-            <div class="level-info">
-                <span class="label">Level:</span>
-                <span id="current-level">1</span>
+        <!-- Story Banner - Full Width -->
+        <div class="story-banner-full">
+            <div class="story-icon-large" id="story-icon">🎮</div>
+            <div class="story-content">
+                <h1 id="story-title">Loading Challenge...</h1>
+                <p id="story-description">Loading story...</p>
             </div>
-            <div class="score-info">
-                <span class="label">Score:</span>
-                <span id="score">0</span>
+            <div class="progress-indicator">
+                <span class="challenge-number">Challenge <span id="current-level">1</span> of 5</span>
+                <span class="score-display">Score: <span id="score">0</span></span>
             </div>
         </div>
 
-        <!-- Game Area -->
+        <!-- Game Area - Equal Width Columns -->
         <div class="game-area">
-            <!-- Challenge Panel -->
-            <div class="challenge-panel">
-                <!-- Level Header with Icon -->
-                <div class="level-header">
-                    <div class="level-icon" id="level-icon">🎮</div>
-                    <div class="level-title-section">
-                        <h2 id="story-title">Loading Challenge...</h2>
-                        <p class="story-description" id="story-description">Loading story...</p>
-                    </div>
-                </div>
-
+            <!-- Left Column: Mission & Components -->
+            <div class="game-column left-column">
                 <!-- Mission Box -->
-                <div class="mission-box">
-                    <div class="mission-header">🎯 Your Mission:</div>
+                <div class="mission-card">
+                    <div class="card-header">🎯 Your Mission</div>
                     <div class="mission-text" id="challenge-task">Loading task...</div>
                 </div>
 
-                <!-- Show Hints Toggle -->
-                <button id="hint-toggle" class="hint-toggle">▶ Show Hints</button>
-
-                <!-- System Code Block (Hidden by default) -->
-                <div id="system-code" class="system-code" style="display: none;">
-                    <div class="code-header">// System Code</div>
-                    <pre class="code-content"><code id="code-content">// Loading...</code></pre>
+                <!-- System Code - Always Visible -->
+                <div class="system-code-card">
+                    <div class="card-header">// Arduino Code Running</div>
+                    <pre class="code-display"><code id="code-content">// Loading...</code></pre>
                 </div>
 
-                <!-- Drag Components Section -->
-                <div class="drag-section">
-                    <div class="drag-header">🔧 Drag Components to Breadboard:</div>
+                <!-- Components Section -->
+                <div class="components-card">
+                    <div class="card-header">🔧 Drag Components to Breadboard</div>
                     <div class="component-grid" id="component-toolbox">
                         <!-- Components will be added dynamically -->
                     </div>
                 </div>
 
                 <!-- Action Buttons -->
-                <div class="action-buttons">
+                <div class="action-buttons-row">
                     <button id="check-btn" class="btn btn-check">✓ Check Solution</button>
                     <button id="reset-btn" class="btn btn-reset">Reset</button>
                 </div>
             </div>
 
-            <!-- Workspace -->
-            <div class="workspace">
+            <!-- Right Column: Breadboard Workspace -->
+            <div class="game-column right-column">
                 <div class="workspace-header">
                     <div class="workspace-title">🔌 Breadboard (Drag & Drop)</div>
                     <button id="test-btn" class="btn btn-test">▶ Test</button>
