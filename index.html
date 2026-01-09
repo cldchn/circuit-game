@@ -19,38 +19,43 @@
             </div>
         </header>
 
-        <!-- Story Banner - Full Width -->
-        <div class="story-banner-full">
-            <div class="story-icon-large" id="story-icon">🎮</div>
-            <div class="story-content">
-                <h1 id="story-title">Loading Challenge...</h1>
-                <p id="story-description">Loading story...</p>
-            </div>
-            <div class="progress-indicator">
-                <span class="challenge-number">Challenge <span id="current-level">1</span> of 5</span>
-                <span class="score-display">Score: <span id="score">0</span></span>
-            </div>
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar" style="width: 14.28%"></div>
+            <div class="progress-text">Challenge <span id="current-level">1</span> of 7</div>
         </div>
 
         <!-- Game Area - Equal Width Columns -->
         <div class="game-area">
-            <!-- Left Column: Mission & Components -->
+            <!-- Left Column: Story & Mission -->
             <div class="game-column left-column">
-                <!-- Mission Box -->
-                <div class="mission-card">
-                    <div class="card-header">🎯 Your Mission</div>
-                    <div class="mission-text" id="challenge-task">Loading task...</div>
+                <!-- Challenge Header -->
+                <div class="challenge-header">
+                    <div class="challenge-icon" id="story-icon">🎮</div>
+                    <h2 id="story-title">Loading Challenge...</h2>
                 </div>
 
-                <!-- System Code - Always Visible -->
-                <div class="system-code-card">
-                    <div class="card-header">// Arduino Code Running</div>
-                    <pre class="code-display"><code id="code-content">// Loading...</code></pre>
+                <!-- Story Text -->
+                <p class="story-text" id="story-description">Loading story...</p>
+
+                <!-- Mission Box -->
+                <div class="mission-box-styled">
+                    <div class="mission-box-header">🎯 YOUR MISSION:</div>
+                    <div class="mission-box-text" id="challenge-task">Loading task...</div>
+                </div>
+
+                <!-- Show Hints Button -->
+                <button class="show-hints-btn" id="show-hints-btn">▶ Show Hints</button>
+
+                <!-- System Code - Collapsible -->
+                <div class="system-code-section" id="system-code-section" style="display: none;">
+                    <div class="code-header-styled">// System Code</div>
+                    <pre class="code-pre"><code id="code-content">// Loading...</code></pre>
                 </div>
 
                 <!-- Components Section -->
-                <div class="components-card">
-                    <div class="card-header">🔧 Drag Components to Breadboard</div>
+                <div class="components-section">
+                    <div class="components-header">🔧 DRAG COMPONENTS TO BREADBOARD:</div>
                     <div class="component-grid" id="component-toolbox">
                         <!-- Components will be added dynamically -->
                     </div>
@@ -58,8 +63,8 @@
 
                 <!-- Action Buttons -->
                 <div class="action-buttons-row">
-                    <button id="check-btn" class="btn btn-check">✓ Check Solution</button>
-                    <button id="reset-btn" class="btn btn-reset">Reset</button>
+                    <button id="check-btn" class="btn btn-check-solution">✓ Check Solution</button>
+                    <button id="reset-btn" class="btn btn-reset-circuit">Reset</button>
                 </div>
             </div>
 

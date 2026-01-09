@@ -543,6 +543,12 @@ function setupEventListeners() {
     document.getElementById('reset-btn').addEventListener('click', resetCircuit);
     document.getElementById('feedback-close').addEventListener('click', closeFeedback);
 
+    // Hint toggle handler
+    const showHintsBtn = document.getElementById('show-hints-btn');
+    if (showHintsBtn) {
+        showHintsBtn.addEventListener('click', toggleHints);
+    }
+
     const breadboardContainer = document.querySelector('.breadboard-container');
     breadboardContainer.addEventListener('dragover', handleDragOver);
     breadboardContainer.addEventListener('dragleave', handleDragLeave);
@@ -554,6 +560,18 @@ function handleDragLeave(e) {
 
     // Clear preview holes when leaving drag area
     document.querySelectorAll('.hole.preview').forEach(h => h.classList.remove('preview'));
+}
+
+// Toggle Hints/Code Section
+function toggleHints() {
+    const codeSection = document.getElementById('system-code-section');
+    const hintsBtn = document.getElementById('show-hints-btn');
+
+    if (codeSection && hintsBtn) {
+        const isHidden = codeSection.style.display === 'none';
+        codeSection.style.display = isHidden ? 'block' : 'none';
+        hintsBtn.textContent = isHidden ? '▼ Hide Hints' : '▶ Show Hints';
+    }
 }
 
 // Test Circuit Functionality
@@ -1401,8 +1419,24 @@ function closeFeedback() {
 
 // Update UI
 function updateUI() {
-    document.getElementById('current-level').textContent = gameState.currentLevel + 1;
-    document.getElementById('score').textContent = gameState.score;
+    const currentLevelElement = document.getElementById('current-level');
+    if (currentLevelElement) {
+        currentLevelElement.textContent = gameState.currentLevel + 1;
+    }
+
+    const scoreElement = document.getElementById('score');
+    if (scoreElement) {
+        scoreElement.textContent = gameState.score;
+    }
+
+    // Update progress bar
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        const challenges = getChallenges();
+        const totalLevels = challenges.length;
+        const progressPercent = ((gameState.currentLevel + 1) / totalLevels) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+    }
 }
 
 // Initialize game when DOM is loaded
