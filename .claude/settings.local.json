@@ -4,7 +4,16 @@
       "Bash(start index.html)",
       "Bash(dir:*)",
       "Bash(start landing.html)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Circuit Quest - Educational Arduino Game\n\nFeatures:\n- Interactive breadboard circuit builder\n- 5 themed storylines \\(Mars Colony, Wild West, Sports, Theater, Medical\\)\n- Drag-and-drop component placement\n- Real-time circuit testing\n- Wire connection system\n- Story-driven challenges \\(5 levels per theme\\)\n- Responsive landing page with theme selection\n- Educational content for high school students\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git config:*)",
+      "Bash(gh:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(start https://github.com/claudiajchen/circuit-game)",
+      "Bash(start https://github.com/claudiajchen/circuit-game/settings/pages)",
+      "Bash(git remote set-url:*)"
     ],
     "deny": [],
     "ask": []

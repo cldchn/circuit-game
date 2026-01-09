@@ -3,175 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuit Challenge - Learn Electronics Through Story</title>
+    <title>Circuit Quest - Epic Electronics Adventure</title>
     <link rel="stylesheet" href="landing-styles.css">
 </head>
 <body>
-    <div class="landing-container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="badge">🎓 Educational Game</div>
-            <h1 class="hero-title">⚡ Circuit Challenge</h1>
-            <p class="hero-subtitle">Learn Arduino & Electronics Through Interactive Adventures</p>
-            <div class="hero-description">
-                <p>Master real circuit-building skills while saving Mars colonies, winning championships, managing Broadway shows, or performing life-saving surgeries!</p>
+    <div class="game-landing">
+        <!-- Animated Background -->
+        <div class="circuit-bg"></div>
+
+        <!-- Hero Section with Logo -->
+        <header class="game-hero">
+            <div class="logo-container">
+                <div class="circuit-logo">
+                    <span class="logo-icon">⚡</span>
+                    <h1 class="game-title">CIRCUIT QUEST</h1>
+                    <div class="subtitle-glow">EPIC ELECTRONICS ADVENTURE</div>
+                </div>
             </div>
-            <button class="cta-button" onclick="document.querySelector('.theme-selection').scrollIntoView({behavior: 'smooth'})">
-                Choose Your Adventure ↓
-            </button>
+
+            <p class="tagline">Build circuits. Save worlds. Become a hero.</p>
+
+            <div class="cta-buttons">
+                <button class="mega-btn primary-btn" onclick="document.querySelector('.missions-section').scrollIntoView({behavior: 'smooth'})">
+                    <span class="btn-icon">🎮</span>
+                    START YOUR QUEST
+                </button>
+                <a href="learn.html" class="mega-btn secondary-btn">
+                    <span class="btn-icon">📚</span>
+                    WHAT YOU'LL LEARN
+                </a>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Epic Missions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Levels</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Fun</div>
+                </div>
+            </div>
         </header>
 
-        <!-- What You'll Learn Section -->
-        <section class="learn-section">
-            <h2>What You'll Master</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">💡</div>
-                    <h3>LED Circuits</h3>
-                    <p>Learn proper polarity, current limiting, and resistor placement</p>
+        <!-- Mission Selection -->
+        <section class="missions-section">
+            <h2 class="section-title">
+                <span class="title-decoration">⚔️</span>
+                CHOOSE YOUR MISSION
+                <span class="title-decoration">⚔️</span>
+            </h2>
+            <p class="mission-intro">Each mission takes you on a unique adventure where your circuit-building skills save the day!</p>
+
+            <div class="missions-grid">
+                <!-- Space Mission -->
+                <div class="mission-card" data-theme="SPACE_EXPLORER">
+                    <div class="mission-banner space-banner">
+                        <div class="mission-icon-large">🚀</div>
+                        <div class="difficulty-badge hard">CHALLENGING</div>
+                    </div>
+                    <div class="mission-content">
+                        <h3 class="mission-title">Mars Colony Engineer</h3>
+                        <p class="mission-desc">The Mars colony is in crisis! Life support systems are failing. Only YOU can wire the emergency circuits and save the crew before oxygen runs out!</p>
+                        <div class="mission-features">
+                            <div class="feature-item">⚡ Emergency Systems</div>
+                            <div class="feature-item">💚 Life Support</div>
+                            <div class="feature-item">🚪 Airlock Control</div>
+                        </div>
+                        <div class="mission-stats">
+                            <span class="stat-item">🎯 5 Missions</span>
+                            <span class="stat-item">⏱️ 30-45 min</span>
+                        </div>
+                        <button class="mission-btn space-btn">
+                            <span>LAUNCH MISSION</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🔌</div>
-                    <h3>Breadboard Basics</h3>
-                    <p>Understand how breadboards work and component connections</p>
+
+                <!-- Wild West Mission -->
+                <div class="mission-card" data-theme="WILD_WEST">
+                    <div class="mission-banner wildwest-banner">
+                        <div class="mission-icon-large">🤠</div>
+                        <div class="difficulty-badge medium">MODERATE</div>
+                    </div>
+                    <div class="mission-content">
+                        <h3 class="mission-title">Wild West Telegraph</h3>
+                        <p class="mission-desc">Bandits are approaching! The telegraph is the town's only warning system. Wire it up fast or the whole frontier is doomed!</p>
+                        <div class="mission-features">
+                            <div class="feature-item">🚨 Danger Signals</div>
+                            <div class="feature-item">📡 Telegraph System</div>
+                            <div class="feature-item">🔔 Town Bell</div>
+                        </div>
+                        <div class="mission-stats">
+                            <span class="stat-item">🎯 5 Missions</span>
+                            <span class="stat-item">⏱️ 25-40 min</span>
+                        </div>
+                        <button class="mission-btn wildwest-btn">
+                            <span>START ADVENTURE</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🎮</div>
-                    <h3>Arduino Pins</h3>
-                    <p>Digital, PWM, and analog pins - when to use each</p>
+
+                <!-- Sports Mission -->
+                <div class="mission-card" data-theme="SPORTS_ARENA">
+                    <div class="mission-banner sports-banner">
+                        <div class="mission-icon-large">🏟️</div>
+                        <div class="difficulty-badge easy">BEGINNER</div>
+                    </div>
+                    <div class="mission-content">
+                        <h3 class="mission-title">Championship Game Night</h3>
+                        <p class="mission-desc">50,000 fans are watching! The stadium tech is glitching during the biggest game of the year. Get those lights and scoreboards working!</p>
+                        <div class="mission-features">
+                            <div class="feature-item">🔴 Team Lights</div>
+                            <div class="feature-item">⏱️ Score Display</div>
+                            <div class="feature-item">🎯 Goal Detection</div>
+                        </div>
+                        <div class="mission-stats">
+                            <span class="stat-item">🎯 5 Missions</span>
+                            <span class="stat-item">⏱️ 20-35 min</span>
+                        </div>
+                        <button class="mission-btn sports-btn">
+                            <span>ENTER ARENA</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Real Components</h3>
-                    <p>LEDs, resistors, buttons, motors, and sensors</p>
+
+                <!-- Theater Mission -->
+                <div class="mission-card" data-theme="MUSICAL_THEATER">
+                    <div class="mission-banner theater-banner">
+                        <div class="mission-icon-large">🎭</div>
+                        <div class="difficulty-badge medium">MODERATE</div>
+                    </div>
+                    <div class="mission-content">
+                        <h3 class="mission-title">Broadway Opening Night</h3>
+                        <p class="mission-desc">The curtain rises in minutes! Spotlights, stage effects, and curtains need your expert wiring. The show MUST go on!</p>
+                        <div class="mission-features">
+                            <div class="feature-item">🔴 Spotlights</div>
+                            <div class="feature-item">🎪 Stage Controls</div>
+                            <div class="feature-item">💚 Special Effects</div>
+                        </div>
+                        <div class="mission-stats">
+                            <span class="stat-item">🎯 5 Missions</span>
+                            <span class="stat-item">⏱️ 25-40 min</span>
+                        </div>
+                        <button class="mission-btn theater-btn">
+                            <span>RAISE CURTAIN</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Medical Mission -->
+                <div class="mission-card" data-theme="MEDICAL_SURGERY">
+                    <div class="mission-banner medical-banner">
+                        <div class="mission-icon-large">🏥</div>
+                        <div class="difficulty-badge hard">CHALLENGING</div>
+                    </div>
+                    <div class="mission-content">
+                        <h3 class="mission-title">Emergency Room Surgeon</h3>
+                        <p class="mission-desc">Lives depend on you! Critical medical equipment needs immediate repairs. Wire the systems perfectly or patients are in danger!</p>
+                        <div class="mission-features">
+                            <div class="feature-item">🚨 Critical Alerts</div>
+                            <div class="feature-item">💚 Vitals Monitor</div>
+                            <div class="feature-item">💉 IV Systems</div>
+                        </div>
+                        <div class="mission-stats">
+                            <span class="stat-item">🎯 5 Missions</span>
+                            <span class="stat-item">⏱️ 30-45 min</span>
+                        </div>
+                        <button class="mission-btn medical-btn">
+                            <span>BEGIN SURGERY</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Theme Selection -->
-        <section class="theme-selection">
-            <h2>Choose Your Adventure</h2>
-            <p class="theme-intro">Select a theme and dive into 5 progressive challenges that teach real circuit-building skills through engaging storylines!</p>
-
-            <div class="themes-grid">
-                <!-- Space Theme -->
-                <div class="theme-card" data-theme="SPACE_EXPLORER">
-                    <div class="theme-header space-theme">
-                        <div class="theme-icon">🚀</div>
-                        <h3>Mars Colony Engineer</h3>
-                    </div>
-                    <div class="theme-body">
-                        <p class="theme-description">You're the chief engineer on humanity's first Mars colony. Critical systems are failing and you need to repair them before disaster strikes!</p>
-                        <div class="theme-features">
-                            <span class="feature-tag">🚨 Emergency Systems</span>
-                            <span class="feature-tag">💚 Life Support</span>
-                            <span class="feature-tag">🚪 Airlock Control</span>
-                        </div>
-                        <button class="theme-btn space-btn">Launch Mission</button>
-                    </div>
-                </div>
-
-                <!-- Wild West Theme -->
-                <div class="theme-card" data-theme="WILD_WEST">
-                    <div class="theme-header wildwest-theme">
-                        <div class="theme-icon">🤠</div>
-                        <h3>Wild West Telegraph</h3>
-                    </div>
-                    <div class="theme-body">
-                        <p class="theme-description">You're the telegraph operator in a frontier town. Messages need to get through or the town is doomed! Wire up the telegraph system!</p>
-                        <div class="theme-features">
-                            <span class="feature-tag">🚨 Danger Signal</span>
-                            <span class="feature-tag">📡 Telegraph</span>
-                            <span class="feature-tag">🔔 Town Bell</span>
-                        </div>
-                        <button class="theme-btn wildwest-btn">Start Mission</button>
-                    </div>
-                </div>
-
-                <!-- Sports Theme -->
-                <div class="theme-card" data-theme="SPORTS_ARENA">
-                    <div class="theme-header sports-theme">
-                        <div class="theme-icon">🏟️</div>
-                        <h3>Championship Game Night</h3>
-                    </div>
-                    <div class="theme-body">
-                        <p class="theme-description">You're the tech manager at the biggest game of the year! Keep the scoreboard, lights, and stadium systems operational with 50,000 fans watching!</p>
-                        <div class="theme-features">
-                            <span class="feature-tag">🔴 Team Lights</span>
-                            <span class="feature-tag">⏱️ Game Clock</span>
-                            <span class="feature-tag">🎯 Goal Detection</span>
-                        </div>
-                        <button class="theme-btn sports-btn">Start Game</button>
-                    </div>
-                </div>
-
-                <!-- Musical Theater Theme -->
-                <div class="theme-card" data-theme="MUSICAL_THEATER">
-                    <div class="theme-header theater-theme">
-                        <div class="theme-icon">🎭</div>
-                        <h3>Broadway Opening Night</h3>
-                    </div>
-                    <div class="theme-body">
-                        <p class="theme-description">You're the lighting technician for tonight's big premiere! Control spotlights, stage effects, and curtains to ensure the show goes on!</p>
-                        <div class="theme-features">
-                            <span class="feature-tag">🔴 Spotlights</span>
-                            <span class="feature-tag">🎪 Curtains</span>
-                            <span class="feature-tag">💚 Stage Effects</span>
-                        </div>
-                        <button class="theme-btn theater-btn">Raise Curtain</button>
-                    </div>
-                </div>
-
-                <!-- Medical Theme -->
-                <div class="theme-card" data-theme="MEDICAL_SURGERY">
-                    <div class="theme-header medical-theme">
-                        <div class="theme-icon">🏥</div>
-                        <h3>Emergency Room Surgeon</h3>
-                    </div>
-                    <div class="theme-body">
-                        <p class="theme-description">You're the lead surgeon in the ER! Medical equipment must work perfectly or lives are at risk. Wire critical systems under pressure!</p>
-                        <div class="theme-features">
-                            <span class="feature-tag">🚨 Critical Alerts</span>
-                            <span class="feature-tag">💚 Vitals Monitor</span>
-                            <span class="feature-tag">💉 IV Pumps</span>
-                        </div>
-                        <button class="theme-btn medical-btn">Begin Surgery</button>
-                    </div>
+        <!-- Game Footer -->
+        <footer class="game-footer">
+            <div class="footer-content">
+                <p class="footer-tagline">⚡ Built for educators, designed for heroes ⚡</p>
+                <p class="footer-note">Real Arduino circuits • Real learning • Real fun</p>
+                <div class="footer-links">
+                    <a href="learn.html">What You'll Learn</a>
+                    <span>•</span>
+                    <a href="https://github.com/cldchn/circuit-game">View on GitHub</a>
                 </div>
             </div>
-        </section>
-
-        <!-- How It Works -->
-        <section class="how-it-works">
-            <h2>How It Works</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Read the Story</h3>
-                    <p>Each level presents an urgent scenario that needs your help</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Build the Circuit</h3>
-                    <p>Drag components onto the breadboard and connect them properly</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Test & Validate</h3>
-                    <p>See your circuit come to life and check if you solved it correctly</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Level Up!</h3>
-                    <p>Progress through 5 challenges, each teaching new concepts</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>🎓 An educational game for high school students learning electronics and Arduino</p>
-            <p class="footer-note">All circuits are based on real Arduino hardware and best practices</p>
         </footer>
     </div>
 

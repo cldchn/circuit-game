@@ -1,15 +1,16 @@
-// Handle theme selection
+// Handle mission selection
 document.addEventListener('DOMContentLoaded', () => {
-    const themeButtons = document.querySelectorAll('.theme-btn');
+    const missionButtons = document.querySelectorAll('.mission-btn');
 
-    themeButtons.forEach(button => {
+    missionButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.stopPropagation();
-            const themeCard = e.target.closest('.theme-card');
-            const themeName = themeCard.dataset.theme;
+            const missionCard = e.target.closest('.mission-card');
+            const themeName = missionCard.dataset.theme;
 
-            // Visual feedback
-            button.textContent = '🚀 Loading...';
+            // Visual feedback - change button text
+            const buttonText = button.querySelector('span:first-child');
+            buttonText.textContent = '🚀 LOADING...';
             button.disabled = true;
             button.style.opacity = '0.7';
 
@@ -24,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add click handler to entire cards as well
-    const themeCards = document.querySelectorAll('.theme-card');
-    themeCards.forEach(card => {
+    const missionCards = document.querySelectorAll('.mission-card');
+    missionCards.forEach(card => {
         card.addEventListener('click', (e) => {
             // Only trigger if not clicking the button directly
-            if (!e.target.classList.contains('theme-btn')) {
-                const button = card.querySelector('.theme-btn');
+            if (!e.target.closest('.mission-btn')) {
+                const button = card.querySelector('.mission-btn');
                 button.click();
             }
         });

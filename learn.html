@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What You'll Learn - Circuit Quest</title>
+    <link rel="stylesheet" href="landing-styles.css">
+    <style>
+        .learn-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-nav {
+            margin-bottom: 40px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .learn-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .learn-title {
+            font-size: 3.5em;
+            color: #ffd700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .learn-subtitle {
+            font-size: 1.3em;
+            color: #aaa;
+        }
+
+        .skills-section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            font-size: 2.5em;
+            color: #ffd700;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0f1528 100%);
+            border: 2px solid #2a3f5f;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-icon {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .skill-card h3 {
+            font-size: 1.6em;
+            color: #ffd700;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        .levels-section {
+            margin-bottom: 60px;
+        }
+
+        .level-card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0f1528 100%);
+            border: 2px solid #2a3f5f;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .level-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 5px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .level-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 900;
+            color: white;
+        }
+
+        .level-title {
+            font-size: 1.8em;
+            color: #00d4ff;
+            font-weight: 700;
+        }
+
+        .level-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .level-content li {
+            color: #ccc;
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .level-content li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5em;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .cta-section p {
+            font-size: 1.3em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .start-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 45px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.5);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 107, 53, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="circuit-bg"></div>
+
+    <div class="learn-page">
+        <div class="back-nav">
+            <a href="landing.html" class="back-btn">
+                <span>←</span>
+                <span>Back to Missions</span>
+            </a>
+        </div>
+
+        <div class="learn-header">
+            <h1 class="learn-title">WHAT YOU'LL MASTER</h1>
+            <p class="learn-subtitle">Real skills. Real circuits. Real fun.</p>
+        </div>
+
+        <!-- Core Skills Section -->
+        <section class="skills-section">
+            <h2 class="section-header">Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span class="skill-icon">💡</span>
+                    <h3>LED Circuits</h3>
+                    <p>Master LED polarity, understand current limiting with resistors, and learn proper component placement for safe, working circuits.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🔌</span>
+                    <h3>Breadboard Mastery</h3>
+                    <p>Learn how breadboards work, understand internal connections, and build circuits without soldering like a pro.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🎮</span>
+                    <h3>Arduino Pins</h3>
+                    <p>Understand digital vs analog, learn PWM for motor control, and know exactly which pin to use for every situation.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">⚙️</span>
+                    <h3>Real Components</h3>
+                    <p>Work with LEDs, resistors, buttons, motors, and sensors - everything you need for actual Arduino projects.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🔬</span>
+                    <h3>Circuit Theory</h3>
+                    <p>Understand voltage, current, and resistance. Learn Ohm's Law practically through hands-on building.</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🐛</span>
+                    <h3>Debugging Skills</h3>
+                    <p>Learn to troubleshoot circuits, find wiring errors, and fix problems like a real engineer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progressive Learning Levels -->
+        <section class="levels-section">
+            <h2 class="section-header">Your Learning Journey</h2>
+
+            <div class="level-card">
+                <div class="level-header">
+                    <div class="level-number">1-2</div>
+                    <div class="level-title">Basic LED Circuits</div>
+                </div>
+                <div class="level-content">
+                    <ul>
+                        <li>LED polarity - which leg goes where and why</li>
+                        <li>Current limiting with 220Ω resistors</li>
+                        <li>Simple digital pin connections</li>
+                        <li>Understanding anode (+) and cathode (-)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="level-card">
+                <div class="level-header">
+                    <div class="level-number">3</div>
+                    <div class="level-title">Multiple Components</div>
+                </div>
+                <div class="level-content">
+                    <ul>
+                        <li>Managing multiple LEDs in one circuit</li>
+                        <li>Individual resistors for each LED</li>
+                        <li>Pin assignments for different circuits</li>
+                        <li>Shared ground connections</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="level-card">
+                <div class="level-header">
+                    <div class="level-number">4</div>
+                    <div class="level-title">Input Controls</div>
+                </div>
+                <div class="level-content">
+                    <ul>
+                        <li>Push buttons and how they work</li>
+                        <li>Pull-down resistors for stable inputs</li>
+                        <li>Motor control with PWM pins</li>
+                        <li>Understanding input vs output pin usage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="level-card">
+                <div class="level-header">
+                    <div class="level-number">5</div>
+                    <div class="level-title">Sensors & Advanced</div>
+                </div>
+                <div class="level-content">
+                    <ul>
+                        <li>Ultrasonic sensor 4-pin connections (VCC, TRIG, ECHO, GND)</li>
+                        <li>Automatic triggering circuits</li>
+                        <li>Integrated systems combining multiple components</li>
+                        <li>Real-world project skills</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Become a Circuit Hero?</h2>
+            <p>Choose your mission and start building real circuits today!</p>
+            <a href="landing.html" class="start-btn">
+                <span>🎮</span>
+                <span>START YOUR QUEST</span>
+            </a>
+        </section>
+    </div>
+</body>
+</html>
