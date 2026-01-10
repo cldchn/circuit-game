@@ -38,6 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Prevent custom card from being clickable (so input works)
+    const customCard = document.querySelector('.custom-card');
+    if (customCard) {
+        customCard.addEventListener('click', (e) => {
+            // Allow input and button clicks, prevent card click
+            if (!e.target.matches('.custom-input') && !e.target.closest('.mission-btn')) {
+                e.stopPropagation();
+            }
+        });
+    }
+
     // Custom theme generator with AI
     const generateBtn = document.getElementById('generate-custom-btn');
     const customInput = document.getElementById('custom-theme-input');

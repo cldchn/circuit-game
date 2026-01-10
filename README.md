@@ -1,4 +1,4 @@
-# ⚡ Circuit Quest - Educational Arduino Game
+# Circuit Quest - Educational Arduino Game
 
 **Play Now:** [https://cldchn.github.io/circuit-game/landing.html](https://cldchn.github.io/circuit-game/landing.html)
 
@@ -8,15 +8,15 @@ An interactive web-based game that teaches Arduino and electronics through story
 
 ---
 
-## 🎮 Features
+## Features
 
 ### Story-Driven Learning
 Learn electronics through engaging narratives! Choose from 5 exciting themes:
-- 🚀 **Mars Colony Engineer** - Fix critical systems on humanity's first Mars colony
-- 🤠 **Wild West Telegraph** - Keep frontier communication lines open
-- 🏟️ **Championship Game Night** - Manage stadium tech during the big game
-- 🎭 **Broadway Opening Night** - Control stage lighting for a premiere performance
-- 🏥 **Emergency Room Surgeon** - Operate life-critical medical equipment
+- **Mars Colony Engineer** - Fix critical systems on humanity's first Mars colony
+- **Wild West Telegraph** - Keep frontier communication lines open
+- **Championship Game Night** - Manage stadium tech during the big game
+- **Broadway Opening Night** - Control stage lighting for a premiere performance
+- **Emergency Room Surgeon** - Operate life-critical medical equipment
 
 ### Accurate Circuit Simulation
 Based on real Arduino and breadboard connections:
@@ -36,7 +36,7 @@ Based on real Arduino and breadboard connections:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Play Online
 Visit the live demo: **[Circuit Quest Landing Page](https://cldchn.github.io/circuit-game/landing.html)**
@@ -61,7 +61,7 @@ No build process or dependencies required - just open `landing.html` in any mode
 
 ---
 
-## 📚 What You'll Learn
+## What You'll Learn
 
 ### Level 1-2: Basic LED Circuits
 - LED polarity (anode vs cathode)
@@ -85,7 +85,7 @@ No build process or dependencies required - just open `landing.html` in any mode
 
 ---
 
-## 🎨 How to Play
+## How to Play
 
 1. **Choose Your Adventure** - Select one of 5 themed storylines
 2. **Read the Story** - Each level presents an urgent scenario
@@ -95,7 +95,7 @@ No build process or dependencies required - just open `landing.html` in any mode
 
 ---
 
-## 🔧 Technical Details
+## Technical Details
 
 ### Components
 - **LEDs**: Red, Green, Blue with accurate 2-leg placement
@@ -128,7 +128,7 @@ circuit-game/
 
 ---
 
-## 🎓 Educational Goals
+## Educational Goals
 
 This game teaches:
 - **Hardware fundamentals**: Understanding physical components
@@ -139,7 +139,7 @@ This game teaches:
 
 ---
 
-## 🌟 Why Story-First?
+## Why Story-First?
 
 Instead of dry technical instructions like:
 > "Connect a red LED to pin 13 with a 220Ω resistor"
@@ -151,7 +151,7 @@ The technical skills are identical, but the engagement and retention are dramati
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Pure HTML5/CSS3/JavaScript** - No frameworks required
 - **Responsive Design** - Works on desktop, tablet, and mobile
@@ -161,17 +161,17 @@ The technical skills are identical, but the engagement and retention are dramati
 
 ---
 
-## 📱 Browser Compatibility
+## Browser Compatibility
 
 Works on all modern browsers:
-- ✅ Chrome/Edge (Recommended)
-- ✅ Firefox
-- ✅ Safari
-- ✅ Opera
+- Chrome/Edge (Recommended)
+- Firefox
+- Safari
+- Opera
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Ideas for improvement:
 - Additional themes and storylines
@@ -183,22 +183,22 @@ Contributions are welcome! Ideas for improvement:
 
 ---
 
-## 📝 License
+## License
 
 This project is open source and available for educational use.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Created as an educational tool for high school students learning electronics and Arduino programming. All circuits are based on real Arduino Uno hardware and follow industry best practices for breadboard prototyping.
 
 ---
 
-## 🎮 Start Learning!
+## Start Learning
 
-**[Play Circuit Quest Now →](https://cldchn.github.io/circuit-game/landing.html)**
+**[Play Circuit Quest Now](https://cldchn.github.io/circuit-game/landing.html)**
 
 ---
 
-**Made with ❤️ for educators and students**
+Made for educators and students

@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #4c1d95 30%, #5b21b6 60%, #312e81 100%);
+    font-family: 'TT Wellingtons Trl', Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #02153D 0%, #4B227A 25%, #0197AF 50%, #00EED0 60%, #0197AF 75%, #4B227A 100%);
     background-attachment: fixed;
     color: #333;
     min-height: 100vh;
@@ -43,12 +43,12 @@ body::before {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 50%, #6366f1 100%);
+    background: linear-gradient(135deg, #4B227A 0%, #0197AF 50%, #00EED0 100%);
     color: white;
     padding: 45px 50px;
     border-radius: 0;
     margin-bottom: 0;
-    box-shadow: 0 10px 40px rgba(147, 51, 234, 0.4);
+    box-shadow: 0 10px 40px rgba(75, 34, 122, 0.4);
     position: relative;
     overflow: hidden;
 }
@@ -145,7 +145,7 @@ header p {
 /* Progress Bar */
 .progress-bar-container {
     position: relative;
-    background: #5b4a9f;
+    background: #4B227A;
     height: 30px;
     padding: 0 20px;
     display: flex;
@@ -157,7 +157,7 @@ header p {
     left: 0;
     top: 0;
     bottom: 0;
-    background: #ffd700;
+    background: linear-gradient(135deg, #0197AF 0%, #00EED0 100%);
     transition: width 0.3s ease;
 }
 
@@ -200,8 +200,8 @@ header p {
 
 /* Mission Box */
 .mission-box-styled {
-    background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
-    border: 2px solid #818cf8;
+    background: linear-gradient(135deg, #d1f3f7 0%, #b8f0e8 100%);
+    border: 2px solid #0197AF;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
@@ -210,14 +210,14 @@ header p {
 .mission-box-header {
     font-size: 0.7em;
     font-weight: 700;
-    color: #4338ca;
+    color: #02153D;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
 }
 
 .mission-box-text {
-    color: #3730a3;
+    color: #02153D;
     line-height: 1.6;
     font-size: 0.95em;
 }
@@ -329,6 +329,7 @@ header p {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: 'TT Wellingtons Trl', Helvetica, Arial, sans-serif;
 }
 
 .btn-primary {
@@ -378,15 +379,15 @@ header p {
 }
 
 .btn-test {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #0197AF 0%, #00EED0 100%);
     color: white;
     font-size: 0.9em;
     padding: 10px 20px;
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 2px 8px rgba(1, 151, 175, 0.3);
 }
 
 .btn-test:hover {
-    background: linear-gradient(to right, #2563eb, #1d4ed8);
+    background: linear-gradient(to right, #00EED0, #0197AF);
 }
 
 .btn-test.running {
@@ -490,15 +491,15 @@ header p {
 
 .btn-check-solution {
     flex: 1;
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #0197AF 0%, #00EED0 100%);
     color: white;
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 2px 8px rgba(1, 151, 175, 0.3);
 }
 
 .btn-check-solution:hover {
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    background: linear-gradient(135deg, #00EED0 0%, #0197AF 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 238, 208, 0.4);
 }
 
 .btn-reset-circuit {
@@ -794,14 +795,14 @@ header p {
 }
 
 .component-item {
-    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #fce7f3 100%);
-    border: 2px solid #c084fc;
+    background: linear-gradient(135deg, #e6f7f9 0%, #d1f3f7 50%, #b8f0e8 100%);
+    border: 2px solid #0197AF;
     border-radius: 16px;
     padding: 22px;
     text-align: center;
     cursor: grab;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15);
+    box-shadow: 0 4px 12px rgba(1, 151, 175, 0.15);
     position: relative;
     overflow: hidden;
 }
@@ -835,10 +836,10 @@ header p {
 }
 
 .component-item:hover {
-    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 50%, #fce7f3 100%);
+    background: linear-gradient(135deg, #d1f3f7 0%, #b8f0e8 50%, #9fecd9 100%);
     transform: translateY(-3px) scale(1.06);
-    border-color: #a855f7;
-    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.35);
+    border-color: #00EED0;
+    box-shadow: 0 8px 24px rgba(0, 238, 208, 0.35);
 }
 
 .component-icon {

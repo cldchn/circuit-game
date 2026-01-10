@@ -562,16 +562,10 @@ function handleDragLeave(e) {
     document.querySelectorAll('.hole.preview').forEach(h => h.classList.remove('preview'));
 }
 
-// Toggle Hints/Code Section
+// Toggle Hints/Code Section - REMOVED since code is always visible now
 function toggleHints() {
-    const codeSection = document.getElementById('system-code-section');
-    const hintsBtn = document.getElementById('show-hints-btn');
-
-    if (codeSection && hintsBtn) {
-        const isHidden = codeSection.style.display === 'none';
-        codeSection.style.display = isHidden ? 'block' : 'none';
-        hintsBtn.textContent = isHidden ? '▼ Hide Hints' : '▶ Show Hints';
-    }
+    // Code section is now always visible
+    // This function kept for backwards compatibility but does nothing
 }
 
 // Test Circuit Functionality
@@ -1319,28 +1313,51 @@ function checkCircuit() {
         placedComponentCounts[comp.type] = (placedComponentCounts[comp.type] || 0) + 1;
     });
 
-    // Check if required components are placed
-    const requiredCounts = challenge.validation.components;
-    let allComponentsPlaced = true;
-    let missingComponents = [];
+    // Validate component counts match requirements
+    const required = challenge.requiredComponents;
 
-    for (const [compType, count] of Object.entries(requiredCounts)) {
-        if ((placedComponentCounts[compType] || 0) < count) {
-            allComponentsPlaced = false;
+    // Check if we have the right number of each component type
+    const requiredCounts = {};
+    required.forEach(compType => {
+        requiredCounts[compType] = (requiredCounts[compType] || 0) + 1;
+    });
+
+    let missingComponents = [];
+    let extraComponents = [];
+
+    for (const [compType, requiredCount] of Object.entries(requiredCounts)) {
+        const placedCount = placedComponentCounts[compType] || 0;
+        if (placedCount < requiredCount) {
             const component = Object.values(COMPONENTS).find(c => c.id === compType);
-            missingComponents.push(component.name);
+            missingComponents.push(`${component ? component.name : compType} (need ${requiredCount - placedCount} more)`);
+        } else if (placedCount > requiredCount) {
+            const component = Object.values(COMPONENTS).find(c => c.id === compType);
+            extraComponents.push(`${component ? component.name : compType} (${placedCount - requiredCount} extra)`);
         }
     }
 
-    // Simple validation
-    const required = challenge.requiredComponents;
-    const placed = gameState.placedComponents;
+    // Check for extra component types not in requirements
+    for (const compType of Object.keys(placedComponentCounts)) {
+        if (!requiredCounts[compType]) {
+            const component = Object.values(COMPONENTS).find(c => c.id === compType);
+            extraComponents.push(`${component ? component.name : compType} (not needed)`);
+        }
+    }
 
-    if (placed.length !== required.length) {
-        showFeedback('⚠️ Check Your Circuit', `You need exactly ${required.length} components. You have ${placed.length}.`, false);
+    // If there are issues, show feedback
+    if (missingComponents.length > 0 || extraComponents.length > 0) {
+        let message = '';
+        if (missingComponents.length > 0) {
+            message += 'Missing: ' + missingComponents.join(', ') + '. ';
+        }
+        if (extraComponents.length > 0) {
+            message += 'Extra: ' + extraComponents.join(', ') + '.';
+        }
+        showFeedback('⚠️ Check Your Circuit', message, false);
         return;
     }
 
+    // Success!
     showFeedback('✅ Mission Success!', `Excellent work! You've completed "${challenge.title}". You've earned 100 points!`, true);
 
     gameState.score += 100;
