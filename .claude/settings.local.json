@@ -13,7 +13,8 @@
       "Bash(git commit:*)",
       "Bash(start https://github.com/claudiajchen/circuit-game)",
       "Bash(start https://github.com/claudiajchen/circuit-game/settings/pages)",
-      "Bash(git remote set-url:*)"
+      "Bash(git remote set-url:*)",
+      "Bash(git filter-branch:*)"
     ],
     "deny": [],
     "ask": []
